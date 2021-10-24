@@ -1,0 +1,363 @@
+Todo Application:
+
+<input type="checkbox" id="myCheckbox"/>
+
+Label -- defines the a label for input element 
+<label for="myCheckbox"> Graduated </label>
+
+for attribute ---------- It associates the HTML label element with an HTML input element
+
+
+===================================================================================================
+
+DOM Manipulations :-- 
+
+Use --   htmlFor  -- property to add HTML for attribute to the HTML label element
+labelElement.htmlFor = "myCheckbox";
+
+    (or)
+
+Can also use --   setAttribute()    -- method , If the attribute already exists, the value is updated
+labelElement.setAttribute("for", "myCheckbox"); ---- later append it
+
+============================================================================================================
+
+Loops: for..of , for...in, for, while --------- 
+
+let myArr = [1, "Nara", 2.5];
+for (let each of myArr) {
+    console.log(each);
+};
+
+****  border: 2px dashed red;
+
+border-top, border-bottom -------- border-top: none;
+
+--------------------------------------------------------------------------
+
+<input placeholder="Enter Your Name"/>  --- placeholder is the text that appears in HTML input element When no value is set.
+
+alert("Hello"); ---- function displays an alert box with a specified message and an OK button. 
+
+
+DOM Properties -:-- 
+
+checked property sets or returns the checked status of an HTML checkbox input element as an boolean value. 
+checkboxElement.checked = true;
+
+
+removeChild() --- method removes an HTML child element of specified HTML parent element from DOM and returns the removed HTML child element.
+
+classList.toggle() --- method is used to toggle b/w adding and removing a class name from an HTML element.
+
+
+imageElement.setAttribute("src", URL);
+
+
+======================================================================================================================
+
+Execution Context :-- 
+The environment in which JS code runs is Execution Context. It is recreated and destroyed whenever we reload an Application.
+
+---------
+Storage Mechanisms :-- Local Storage, Session Storage, Coockies, IndexedDB etc .,. 
+
+** Server-Side Data Storage is storing the data on the server.
+
+Local Storage --:-- Data stored locally within the user's browser in Object form. 
+                    key-value both must be strings , otherwise they get converted to stringd automatically.
+
+
+    localStorage.setItem("key", "value");  ---- setItem() method is used for storing data 
+    localStorage.getItem("key");  ----- getItem() method is for getting data from Storage
+
+--- We use null , where we intentionally want a variable but don't need a value to it.
+
+
+<textarea rows="8" cols="55"></textarea>  ---- textarea is used to write multiline text as input 
+rows --- number of lines
+cols --- number of characters per line.
+
+
+=============================================================
+
+JSON (JS Object Notation) : A representation format used for storing data (client/server), Exchanging data b/w client and server.
+
+Supported Types -:-- Number, String, Boolean, Array, Object, Null 
+
+JS Object    vs   JSON Object --:--- In JSON all keys in Object must be enclosed with double-quotes. In JS this is not necessary
+
+let profile = {
+    name: "Rahul",
+    age: 27,
+}; -------------------------JS
+
+let profile = {
+    "name": "Ramu",
+    "destination": "Web Developer",
+};
+
+
+JSON Methods ---:-- 
+             JSON.stringify( value ) ----- Converts the given value to JSON String 
+             JSON.parse( string )  ---- Parses JSON string and returns JS Object 
+
+
+=======================================================================================================
+
+Array Methods :--- 
+includes, indexOf, lastIndexOf, find, findIndex, push, shift, splice, pop, shift, concat, slice, join, sort 
+
+** splice() method changes the contents of an Array.
+        -- With splice() we can Remove items, Replace items, Add new items.
+
+        arr.splice(start, delete count) --- delete items and returns the deleted items
+        arr.splice(start,delete count, item1, item2, --- ) --- item* are items to be added/replaced based on delete count
+
+** findIndex() method returns the first item's index that satisfies the testing function. If not found returns -1
+
+        let myArr = [5,2,1,4,5,7,8]
+        let itemIndex = myArr.findIndex( function(each) {
+            console.log(each);
+        });
+
+
+** arr.includes(item) -- returns true if the provided item exists in array. If no item found returns false
+** arr.indexOf(item) -- returns first index at which a given item can be found. If no item found returns -1
+
+** arr.lastIndexOf(item) --- returns last index , If not -1
+** arr.find( testingf function ) -- returns first items value which satisfies the provided function .. else returns undefined
+
+** arr.unshift(item1, item2 --)  --- adds 1 or more items to begining and returns new length
+** arr.shift() --- removes the first item and returns removed item
+
+** arr.concat(arr1) -- merge 2 or more arrays
+
+** arr.slice(strIndex, endIndex) -- returns the portion b/w indexes
+** arr.join(separator) --- returns new string by concatenating all items of array , separated by comma (,) or specified separator string 
+
+** arr.sort() --- default is sorted in ascending order
+
+====================================================================================
+
+localStorage.removeItem(key) --- method removes the specified storage object item based on the key.
+
+---------------------------------------------------------------------------------------------------------
+
+Callbacks & Schedulers -:--- 
+A callback is a function that is passed as an argument to another function.
+
+function diaplayGreeting(displayName) {
+    console.log("Hello");
+    displayName();
+    console.log("Good Morning");
+}
+
+displayGreeting(function(){
+    console.log("Ramu");
+})
+
+    (or) --- passing function name/expression as an argument
+
+function displayRamu() {
+    console.log("Ramu");
+}
+displayGreeting(displayRamu);
+
+============================================================================================
+
+Schedulers --:--- Schedulers are used to Schedule the execution of a callback function.
+
+setInterval()  -- method allows us to run a function at the specified interval of time repeatedly.
+                  setInterval(function, delay)
+
+                  function :-- a callback function that is repeatedly called at the specified interval of time.
+                  delay  :-- time in milliseconds
+
+                  *** It executes repeatedly until the browser tab is closed or the Scheduler is cancelled.
+
+ClearInterval() ::-- 
+            This cancels a sche previously set up. We need to pass uniqueId returned by setInterval to clearInterval()
+
+            clearInterval(uniqueId);
+
+
+SetTimeout() --:-- Executes a function after the specified time 
+                   SetTimeout( function, delay ) 
+
+                   function: callback function that is called after specified time (delay)
+
+clearTimeout(uniqueId)
+
+=============================================================================================================
+
+Event Listeners -:-- Inline, onevent, addEventListener()
+
+1. Inline Event Listeners -:-- 
+    <button onclick="greeting()"> Greet </button>
+
+    function greeting() {
+        console.log("Hello Narasimha");
+    };
+
+2. onevent Listeners -:-- 
+    <button id="greetBtn"> Greet </button>
+
+    let greetBtn = document.getElementById('greetBtn');
+
+    greetBtn.onclick = function() {
+        console.log("Hello Narasimha");
+    };
+
+3. addEventListener() :--- Modern approach to add event Listener
+
+    greetBtn.addEventListener('click', function(){
+        console.log("Hello Narasimha");
+    });
+
+===================================================================================================================
+
+Operators -:--   ==, !=, ===, !==, >, >=, <, <=  --- Comparison Operators
+                 &&, ||, ! ------------------------- Logical Operators
+
+    
+Events are the actions by which user or browser interact with HTML elements. (keyboard, mouse, touch etc.,...)
+
+Keyboard Events -:-- User interaction with keyboard ---- *** keyup (when key released) and keydown (when key pressed)
+
+consists of many properties like ---- type, target, key, timeStamp, stopPropagation, etc.,.
+
+inputEl.addEventListener('keydown', function(event){
+    console.log(event.type)  // keydown
+    console.log(event.target)  // <input></input> --- prints which HTML element is triggered
+    console.log(event.key)  // prints which key is pressed
+    console.log(event.keyCode)  --- key value
+})
+
+**** For any event, event-specific properties and methods will be present.
+
+---------------------------------------------------------------------------------------------------------
+
+Hypertext Transfer Protocol (HTTP) :-- 
+A web resource is any data that can be obtained via internet. (HTML Doc, CSS, JSON Data, Plain Text, Image, Video etc.,.)
+
+Uniform Resouce Locator (URL) --:--- 
+Url is a texts string -- specifies where a resource can be found on the internet.
+
+protocol://domainName/path?query-parameters 
+http://flipkart.com/watches?rating=4 
+
+
+Protocol -:-- A std set of rules that allow electronic devices to communicate with each other. HTTP, HTTPS, Web Sockets ---- 
+
+HTTP :-- Used to Transfer resources over the web. ( Educational sites etc.,. )
+         HTTP Request --- Message sent by client 
+                start line : URL, HTTP Methods (CRUD), HTTP Version
+                Headers : additional Info 
+                Body : We place data in request body when we want to send data to server 
+
+
+         HTTP Response -- Message sent by server.
+                Status Line -: HTTP Version, Status Code, Status text 
+                Headers & Body
+
+
+HTTPS -:-- Transfer in encrypted format and provides secure communication.
+
+** can be multiple paths and multiple query parameters sperated by &
+
+
+---------------------------------------------------------------------------------------------------------
+HTTP Request :-- 
+
+Fetch -:-- used to fetch resources across the internet
+           fetch( URL, OPTIONS )
+
+           Options :-- Request Configuration
+           * We can configure the fetch request with many options like Request Methods, Headers, Body, Credentials, Cache etc.,. 
+
+           let options = {
+               method: "GET",
+               headers: {
+                   "Content-Type": "application/json",
+               },
+               body: JSON.stringify(data)
+           };
+
+--- Making HTTP Requests using Fetch ---***
+GET: 
+    let options = {
+        method: "GET"
+    };
+
+POST:
+    let data = {name: "Ramu", status: "Active"};
+    let options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: "Bearer ACCESS-TOKEN"
+        },
+        body: JSON.stringify(data)
+    };
+
+    fetch(URL, options)
+    .then(function(response) {
+        return response.json();
+        return response.status;
+    })
+    .then(function(jsonData) {
+        console.log(jsonData);
+        console.log(status); --------------------------- Accept status in function
+    });
+
+
+text() ---- Getting text from response
+
+====================================================================================
+
+<input type="search"/> ---- For the user to enter search quaries
+
+
+Spinner -:--- 
+<div class="spinner-border" role='status'>
+    <span class="sr-only"> Loading ... </span>
+</div>
+
+=======================================================================================================
+
+HTML Forms -:--- To collect data from the user 
+
+<form></form> -- When we click a button or press Enter key while editing any input field in form, the submit event is triggered.
+
+preventDefault() -- method prevents the occurance of default action.
+
+myForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+});
+
+
+Form Events --:--- An event that can occur within a form. blur, focus, change etc.,... 
+
+<select>
+    <option value="Active"> Active </option>
+</select> ---- select element is used to create a drop-down list. 
+
+<input type="radio" id="" value="" /> --- radio element is used to select one option among a list of given options.
+
+
+** HTML name attribute specifies the name for an HTML element -- <input type="" value="" name="gender"/>
+
+All radio buttons with same name collectively called as a radio group.
+
+
+Boolean Attributes -:-- 
+For HTML Boolean attributes, we only specify the name of HTML attribute.
+
+The presence of boolean attribute represents the true value and absence represents false value.
+
+<option value="Active" selected> Active </option>
+
+<input type="radio" id="" value="" name="" checked/>
+

@@ -1,0 +1,535 @@
+Spread Operator -:-- To unpack an iterable (array, object etc .,.) into individual elements.
+    * For creating a copy
+
+    *** With array ****
+
+    let arr1 = [2,3]
+    let arr2 = [1, ...arr1, 4]
+
+    let arr3 = [...arr1]  ---------- Copy 
+    let arr4 = [...arr1, ...arr3]  ------ Concatenation
+
+
+    *** With Objects ****
+
+    let person = {name: "Narasimha"}
+    let person1 = {...person, city: "Hyderabad"} -- and can make Copy, Concatenation
+
+
+    **** With function calls ******
+
+    Spread Operator syntax can be used to pass an array of arguments to function. Extra values will be ignored.
+
+    function add(a,b){
+        return a+b;
+    }
+    let nums = [1,2,3,4] 
+    console.log(add(...nums))  ----// 3
+
+---------------------------------------------------------------------------------
+
+Rest Parameter -:-- We can pack multiple values into array.
+
+    function numbers(...args){
+        console.log(args);
+    }
+    nums(1,2,3,4)
+
+**** Destructuring Arrays and Objects --- With Rest parameter 
+
+let [a,b, ...rest] = [1,2,3,4,5] 
+let {first, ...rest} = {first: "Hello", second: "Nara", age: 25} 
+
+*** Rest parameter must be last parameter *** -- Otherwise it will give error
+
+==============================================================================================
+
+Functions -:-- 
+Default Parameters -:-- Allow us to give default values to function parameters.
+
+function numbers(a=2, b=5){
+    console.log(a,b); ---------------// 3, 5
+}
+numbers(3);
+
+
+Template Literals (Template Strings) -:--- 
+    * Used to embed variables or expressions in string.
+    * Write multiline strings.
+
+let firstName = "Narasimha";
+console.log(`Hello ${firstName}`);
+
+==================================================================================================================
+
+Ternary Operator -:-- Used to replace if-else statements in some situations
+                      condition ? expressionIfTrue : expressionIfFalse 
+
+                      let speed = 70;
+                      let message = speed >=100 ? "Too Fast": "Ok";
+
+Switch Statement -:-- 
+                    let day = 1;
+                    switch (day) {
+                    case 1:
+                        console.log("Monday");  // Monday
+                        break;
+                    case 2:
+                        console.log("Saturday");
+                        break;
+                    default:
+                        console.log("Invalid");
+                        break;
+                    }
+---------- If there is no break statement, then the execution continues with next case until the break statement is met.
+
+=======================================================================================================================
+
+Defining Functions :-- Some other ways other than Declaration, Expression are Arrow function, Function Constructor etc.,. 
+
+Arrow function -:-- Is a simple and concise syntax for defining a function ( alternate to function expression ).
+
+                    let sum = (a,b) => a+b 
+
+                        (or)
+                    
+                    let sum = (a, b) => {
+                        return a+b;
+                    }
+                    console.log(sum(2,3))
+
+** return statement and curly braces are not required for simple expressions.
+** When there is only 1 parameter, then parenthesis is not required.
+
+                let greet = name => `Hello ${name}`;
+                console.log(greet('Ramu'));
+
+** If there are no parameters -- parenthesis will be empty but they should be present.
+
+=====================
+
+Returning Objects -:-- 
+                    let createUser = name => {
+                        return {
+                            firstName: name 
+                        };
+                    };
+                    console.log(createUser("Ram"));
+
+                        (or)
+
+                    ** Simple expression 
+                    let createUser = name => ({firstName: name}) ---- must wrap in () to distinguish with a code block 
+
+
+=================================================================================================================================
+
+Factory Function and Constructor Function --:--- 
+
+Factory Function ::: Function that returns a new object for every function call. (camelCase function name)
+
+                    function createCar(color, brand){
+                        return{
+                            color: color,       ******* can use shorthand notations --- simply color,    without color:
+                            brand: brand,
+                            start: function() {
+                                console.log("Started");
+                            }
+                        };
+
+                            (or)
+
+                        return {
+                            color,
+                            brand,
+                            start(){
+                                console.log("Started");
+                            }
+                        };
+                    }
+
+                    let car1 = createCar("Blue","Tata");
+                    console.log(car1);
+
+------------------------------------------- 
+
+Constructor Function -:--- A regular function that returns a new object on calling with new Operator. 
+                           This created new Object is Instance. (PascalCase function name)
+
+                           ** When a function called with new operator -- it Creates an empty object and assigns it to this , returns this.
+
+                           function Car(color, brand){
+                               this.color = color;
+                               this.brand = brand;
+                               this.start = function(){
+                                   console.log("Started");
+                               };
+                           }
+                           let car1 = new Car("Blue", "Tata");
+                           console.log(car1);
+
+                * car1 ----------- Instance
+                * car1.start() --- Instance Method
+                * car1.color ----- Instance properties
+
+=============================================================================================================
+
+JS Functions -:-- 
+Default Function properties --- name, length, constructor, prototype etc.,. 
+
+Default Methods -:-- apply(), bind(), call(), toString()  etc.,. 
+
+
+Car.name ----- name property returns the name of the function
+Car.length --- returns number of parameters passed to function
+
+typeOf(Car) --- returns function
+
+
+Constructor Property -:--- Every Object in JS has constructor property. It refers to constructor function that is used to create the object.
+
+car1.constructor ---- returns function ---- f Car(----) {}
+
+
+** Built-in Constructor Function -:--- 
+                    The constructor functions that are provided by JS 
+                    In JS date and time are represented by Date object. 
+
+
+                    4 ways to create date object... 
+                    new Date(), new Date(milliseconds), new Date(dateString), new Date(yr, mnth, day, hr, min, secs, millisecs)
+
+                   
+                    new Date("2010")   or -- we can pass with month and date also new Date("2021-01-28")
+                    new Date("03/25/2015")  or new Date("Jul 1 2021")
+
+                    if 2 args are passed --- it takes as year, month.
+
+                    if we pass 1 argument -- it is treated as milliseconds
+
+                    *** Auto correction in date is available.
+
+        Instance Methods -:-- 
+                           .now(), getFullYear(), getMonth(), getDate(), getDay(), getHours(), getMinutes(), getUTCDate(),
+                           setFullYear(), setFullMonth(), setDate(), setUTCDate() 
+
+
+=======================================================================================================================
+
+this  keyword -:--- 
+
+this is determined in 3 ways --
+                           * In Object methods -- this refers to the object that is executing the current function
+                           * In Regular functions -- this refers to window object 
+                           * In Arrow Functions -- this refers to the context in which the code is defined.
+                                -- this in simple arrow function refers to window object 
+
+                                let car = {
+                                    color: "Blue",
+                                    start: () => {
+                                        console.log(this) ------ window {}
+                                    }
+                                }
+                                car.start()
+
+
+                                -- this in arrow function with callbacks refers to created Object 
+
+                                let car = {
+                                    color: "Blue",
+                                    start: function() {
+                                        setTimeout(() => {
+                                            console.log(this) ------ Object {}
+                                        }, 1000)                                       
+                                    }
+                                }
+                                car.start()
+
+
+                           * In Constructor function ( in arrow function also )--- this refers to Instance Object (Car)
+
+===============================================================================================================
+
+All primitive type values are immutable --- Number, String, Boolean, Symbol, Undefined etc .,. 
+
+All Objects are mutable --- object, Array, function
+
+
+Declaring Variables -:-- in 3 ways let, const, var 
+
+            let ---- Initialization is not mandatory, Variables can be reassigned.
+            const -- Initialization is mandatory, Once Initialized then it can't be reassigned
+            
+
+======================================================================================================================
+
+Built-in Constructor Functions -:--- 
+
+creating array with new operator -:--- new Array("a", 2, true)
+
+
+Prototype Property -:---- A Prototype property will be shared across all the instances of thier constructor function.
+                          let myArray = new Array(-----)
+
+                          console.log(Array.prototype)
+
+                          Object.getPrototypeOf(myArray) 
+
+** On calling the new() operator, all the properties and methods defined on the prototype will become accessible 
+to instance objects. This is Prototypal Inheritance. 
+
+Prototype properties/methods are that common accross the instance objects.
+
+            person.prototype.displayFullName = function() {
+                return this.firstName + " " + this.lastName;
+            }
+
+            console.log(Object.getOwnPropertyNames(person));
+
+
+----------------------------------------------------------------------------------------------------
+
+Class -:--- class is special type of function used for creating multiple objects.
+
+Constructor Method is a special method of a class for creating and Initializing an object of that class.
+
+            class Person {
+                constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+            displayFullName() {
+                return this.firstName + " " + this.lastName;
+            }
+            }
+            let person1 = new Person("Virat", "Kohli");
+            
+            console.log(person1);
+
+
+** Type of class is a function.
+
+Inheritance in JS Classes -:-- Mechanism by which a class inherits methods and properties from another class.
+                               extends keyword is used to inherit the methods and properties of superclass.
+                               super() makes sure that SuperClass constructor() gets called and Initializes instance.
+
+                               * If we write SuperClass methods in SubClass --- is called Method Overriding.
+
+                               class Animal {
+                                constructor(name) {
+                                  this.name = name;
+                                }
+                                eat() {
+                                  return `${this.name} is eating`;
+                                }
+                                makeSound() {
+                                  return `${this.name} is shouting`;
+                                }
+                              }
+                              class Dog extends Animal {
+                                constructor(name, breed) {
+                                  super(name);
+                                  this.breed = breed;
+                                }
+                                sniff() {
+                                  return `${this.name} is sniffing`;
+                                }
+                              }
+
+                              let animal1 = new Animal("gorilla");
+                              let someDog = new Dog("someDog", "German Shepherd");
+                              
+                              console.log(animal1.eat());  // gorilla is eating
+                              
+                              console.log(someDog);  // Dog {...}
+                              console.log(someDog.eat());  // someDog is eating 
+                              console.log(someDog.sniff());  // someDog is sniffing
+
+===========================
+
+this in Super Class ----- refers to instance object. 
+===============================================================================
+
+If the code executes line by line ---- This is synchronous behaviour. JS works synchronously.
+
+fetch -- is an asynchronous execution.
+
+JS Promises :--- Promise is a way to handle Asynchronous opeartions.
+                 A promise is an object that represents a result of operation that will be returned at some point in the future.
+
+                 Promise will be of 3 states -- Pending, Fulfilled, Rejected.
+
+                 Rejected State ---- may be of wrong URL, Server is taking too long to respond, Network failure etc.,. 
+
+                const url = "https://apis.ccbp.in/jokes/random";
+                let responsePromise = fetch(url);
+
+                responsePromise.then((response) => {
+                    console.log(response); // Response{ … }
+                });
+
+========================================================================================================
+
+** Combining multiple .then() `s  and .catch() `s to a single promise is called promise chaining.
+On success callback returns promise.
+
+                const url = "https://apis.ccbp.in/jokes/random";
+                let responsePromise = fetch(url);
+
+                responsePromise
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data); // Object { value: "They call it the PS4 because there are only 4 games worth playing!"
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+                *** chaining on success callback again ---- and Fetch with error handling
+
+
+==========================================================================================================
+
+There are 2 main types of asynchronous code style we'll come accross in JS.
+
+1---- callback based ------- setTimeout(), setInterval()
+2---- Promise based -------- fetch()
+
+Promises are new style of async code ****
+
+Create owm promise ----
+                      const myPromise = () => {
+                        return new Promise((resolve, reject) => {
+                            // Async task
+
+                            setTimeout(()=> {
+                                // resolve();
+                                console.log("Resolved")
+                            }, 1000);
+                        });
+                      };
+                      console.log(myPromise());
+
+
+                      myPromise.then((fromResolve) => {
+                          console.log(fromResolve)
+                      })
+                      .catch((fromReject) => {
+                          console.log(fromReject);
+                      })
+
+==========================================================================
+
+Async/Await ----- is a modern way to consume promises.
+
+Use async keyword before the function only if it is performing async operators. Must use await in async function only.
+
+        const url = "https://apis.ccbp.in/jokes/random";
+
+        const doNetworkCall = async () => {
+        const response = await fetch(url);
+        const jsonData = await response.json();
+        console.log(jsonData);
+        };
+        doNetworkCall();
+
+Error handling with Async and Await --:-- ****
+try - catch block 
+
+            const url = "https://a.ccbp.in/jokes/random";
+
+            const doNetworkCall = async () => {
+            try {
+                const response = await fetch(url);
+                const jsonData = await response.json();
+                console.log(jsonData);
+            } catch (error) {
+                console.log(error);
+            }
+            };
+
+            const asyncPromise = doNetworkCall();
+
+    *** Async function always returns promise.
+
+===================================================================================
+
+String Maipulations -:--- 
+
+str.toUpperCase(), str.toLowerCase(), str.trim() -- removes all the whitespaces from both ends of a string.
+
+str.slice(strt, end) ---- extracts a section of a string and returns new string, without modifying original string.
+
+str.split(separator, limit) -- to split a string into an array of substrings.
+
+str.replace(value, newValue)
+
+str.includes(value, start) --- returns true if the string contains the value, Otherwise it returns false 
+
+str1.concat(str2, str3, ---)
+
+str.indexOf(value, start)
+
+str.startsWith(value), str.endsWith(value)
+
+str.toString() --- returns the value of a string object. 
+
+str.subString(start, end) ------ returns a part of string between the start and end indexes or to end of string.
+
+str.length --------------- number of characters.
+
+=================================================================================================================
+
+Scoping is the region of the code where a certain variable can be accessed.
+
+Block Scope -:-- If a variable declared with const or let within a curly braces ({}) -- Block Scope ****
+                 if..else, function() {}, switch(), for..of etc.,. 
+
+
+Global Scope -:--- If a variable is declared outside all functions and curly braces ({}) -- Global Scope.
+
+**
+Hoisting is a JS mechanism where -- ** function declarations are moved to top of their Scope before code execution.
+
+        let x = 15;
+        let y = 10;
+        let result = add(x, y);
+        console.log(result); // 25
+
+        function add(a, b) {
+            return a + b;
+        }
+** function expressions, Arrow Functions are not hoisted.***
+
+----------------------------------------------------------------------------------------------------
+
+map() -- creates new array with results of calling a function for every array element.
+         const result = numbers.map((number) => number*number)
+
+forEach() --- Always returns Undefined.
+              arr.forEach((fruit) => console.log(fruit));
+
+filter() --- creates new array with all elements that pass the test. If no elements returns []
+             const positiveNumbers = numbers.filter((number) => number > 0);
+
+
+reduce() --- executes a reducer function resulting single output.
+             array.reduce(function(accumulator, currentValue, index, arr), initialValue)      ---- index, arr are optional
+
+            
+every() --- returns a Boolean value.
+
+some()
+
+arr.reverse() --- reverses the order of elements.
+
+arr.flat([depth]) ---- creates new array with all sub-array elements concatinated into it recursively up to specified depth.
+
+        const arr1 = [0, 1, 2, [3, 4]];
+        const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+        console.log(arr1.flat()); // [ 0,1,2,3,4 ]
+        console.log(arr2.flat(2)); // [0, 1, 2, [3, 4]]
+
+---------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.projects-homepage {
+    text-align: center;
+    padding: 15px;
+}
+
+.software-developer-image {
+    width: 70vw;
+    height: 60vh;
+    margin-bottom: 10px;
+}
+
+.my-projects-heading {
+    color: #183b56;
+    font-family: "Bree Serif";
+    font-size: 26px;
+}
+
+.my-projects-description {
+    color: #616e7c;
+    font-family: "Bree Serif";
+    font-size: 15px;
+}
+
+.my-project-image {
+    width: 220px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+.bg-foundation-image {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/foundations-bg.png");
+    background-size: cover;
+    height: 100vh;
+}
+
+.foundations-card {
+    background-color: #ffffff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.main-heading {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.main-paragraph {
+    color: #7b8794;
+    font-size: 16px;
+}
+
+.course-card {
+    border-style: solid;
+    border-color: #cbd2d9;
+    border-width: 2px;
+    border-radius: 8px;
+    height: 120px;
+    width: 150px;
+    text-align: center;
+}
+
+.course-image {
+    height: 60%;
+    width: 50%;
+}
+
+.course-heading {
+    color: #323f4b;
+    font-size: 15px;
+    font-family: "Roboto";
+    font-weight: 600;
+}
+
+.diwali-top-section {
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/diwali-bg.png");
+    height: 30vh;
+    background-size: cover;
+}
+
+.diwali-top-section-heading {
+    color: #ffffff;
+    font-family: "Caveat";
+    font-size: 36px;
+    width: 200px;
+    padding: 20px;
+}
+
+.diwali-bottom-section {
+    text-align: center;
+    background-color: #e6f6ff;
+    padding: 15px;
+}
+
+.diwali-card-item {
+    text-align: center;
+    background-color: #ffffff;
+    width: 140px;
+    border-radius: 9px;
+    padding: 16px;
+    margin: 15px;
+}
+
+.diwali-card-image {
+    height: 64px;
+    width: 64px;
+}
+
+.diwali-card-name {
+    color: #616e7c;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.diwali-card-price {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.book-store-home-page {
+    background-color: #1b1b1b;
+    padding: 24px;
+}
+
+.home-page-heading {
+    color: #ffffff;
+    font-family: "Bree Serif";
+    font-size: 28px;
+}
+
+.popular-book-container {
+    background-color: #e6f6ff;
+    border-radius: 8px;
+}
+
+.popular-book-image {
+    width: 140px;
+    height: 190px;
+}
+
+.popular-book-heading {
+    color: #183b56;
+    font-family: "Bree Serif";
+    font-size: 18px;
+}
+
+.popular-book-text {
+    color: #06070d;
+    font-family: "Bree Serif";
+    font-size: 16px;
+}
+
+.popular-book-author {
+    color: #183b56;
+    font-family: "Bree Serif";
+    font-size: 14px;
+}
+
+.book-button {
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.recommended-books-heading {
+    color: #ffffff;
+    font-family: "Bree Serif";
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.recommended-book-container {
+    margin-bottom: 10px;
+}
+
+.recommended-book-image {
+    width: 90px;
+    height: 125px;
+}
+
+.recommended-book-short-details-container {
+    margin-left: 10px;
+}
+
+.recommended-book-name {
+    color: #ffffff;
+    font-family: "Bree Serif";
+    font-size: 19px;
+}
+
+.recommended-book-description {
+    color: #e4e7eb;
+    font-family: "Bree Serif";
+    font-size: 16px;
+}
+
+.book-details-page {
+    background-color: #1b1b1b;
+    padding: 24px;
+    text-align: center;
+}
+
+.book-details-page-image {
+    width: 190px;
+    height: 294px;
+    margin-bottom: 20px;
+}
+
+.book-name {
+    color: #ffffff;
+    font-family: "Bree Serif";
+    font-size: 28px;
+}
+
+.author {
+    color: #9aa5b1;
+    font-family: "Bree Serif";
+    font-size: 15px;
+}
+
+.book-description {
+    text-align: left;
+    color: #e4e7eb;
+    font-family: "Bree Serif";
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+.line-color {
+    background-color: white;
+}
+
+.home-bg-image {
+    background-image: url("https://assets.ccbp.in/frontend/static-website/flats-list-bg.png");
+    background-size: cover;
+    height: 100vh;
+}
+
+.booking-card {
+    background-color: #ffffff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.home-heading {
+    color: #f19116;
+    font-family: "Bree Serif";
+    font-size: 28px;
+}
+
+.home-paragraph {
+    color: #222222;
+    font-family: "Bree Serif";
+}
+
+.custom-button {
+    background-color: #f19116;
+    width: 110px;
+    color: #ffffff;
+}
+
+.bg-flats-card {
+    background-color: #222222;
+    background-size: cover;
+}
+
+.flats-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.flat-image-size {
+    width: 20vh;
+}
+
+.flat-heading {
+    color: #222222;
+    font-family: "Bree Serif";
+    font-size: 30px;
+}
+
+.flat-paragraph {
+    color: #222222;
+    font-family: "Bree Serif";
+}
+
+.individual-flat {
+    background-color: #222222;
+}
+
+.individual-flat-paragraph {
+    color: #ffffff;
+    font-family: "Bree Serif";
+    font-size: 16px;
+}
+
+.location-image-size {
+    height: 30px;
+    width: 25px;
+}
+
+
+
+.profile {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+  }
+  
+  .image {
+    width: 200px;
+    margin: 30px;
+  }
+  
+  .heading {
+    font-size: 24px;
+  }
+  
+  .awards {
+    background-color: #f7fbff;
+    padding: 20px;
+  }
+  
+  .bio {
+    background-color: #ffffff;
+    padding: 20px;
+  }

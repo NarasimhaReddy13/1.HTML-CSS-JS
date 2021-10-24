@@ -1,0 +1,220 @@
+Basic Structure :
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        Our Code
+    </body>
+</html>
+
+
+#####
+
+<div> Container -- all written in this or in head tag </div>
+
+
+CSS Syntax: 
+
+selector {
+    prop1: value1;
+    prop2: value2;
+}
+
+font-family: "Roboto, Caveat, Lobster, Bree Serif, Playfair Display, Monoton, Playfair Display SC" --- in quotes 
+
+font-size: 40px; -- in px
+
+font-style: normal, itallic, oblique;
+
+font-weight: normal, bold, bolder, lighter, 100, 200, --- 900;  --- multiples of 100
+
+text-decoration: underline, overline, line-through;
+
+#########################
+
+CSS Box Model: 
+
+height, width -- in px -- or  vh or vw --- or %
+
+background-image: url("URL"); -- takes ht of HTML content if we didn't specify the height to it
+
+background-size: cover; 
+
+Aspect Ratio :  ratio of width and height -- (width/height)
+
+border-width: 2px;  --- on 4 sides
+
+border-width: 0px; ---- removes the border 
+
+border-radius: 2px; --- roundness of corners
+
+border-top(bottom)-right(left)-radius --- options only for 1 side border 
+
+border-color: orange;
+
+border-style: dashed, none(default), solid, dotted;
+
+padding: 10px; --- Space around the content of an HTML element
+
+CSS Colors --- Color names or Hex code or HSL or RGB ---- also from color picker site
+
+
+** Reusability of CSS Ruleset
+
+<h1 class="name1 name2 name3"> Hello Narasimha </h1>  --- can provide multiple class names with space separation.
+=====================================================================
+
+Bootstap: Large collection of predefined reusable code snippets in HTML etc.,. for carousels etc .,. 
+
+To use Bootstrap --
+Add code in HTML head element -- called BootstrapCDN
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+btn btn-primary ---- secondary, success, danger, warning, info, light, dark 
+
+Provides outline buttons ( which don't have background color ) --- 
+btn btn-outile-primary ---- etc.,.
+
+
+default --- btn has no background color 
+
+
+text colors : class = "text-primary"
+
+text-transformation : class="text-uppercase, capitalize, lowercase"
+
+background-colors : bg-primary ------
+
+*** Bootstap provides many predefined class names (like card, carousel alert --- )
+https://hackerthemes.com/bootstrap-cheatsheet/
+
+
+**** Not use predefined bootstrap class names  as a selector in CSS Ruleset ------- give unexpected results
+
+===========================================
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+CSS top line
+
+=================================================
+
+Bootstrap Flexbox properties:
+
+class="d-flex flex-row justify-content-center"
+
+- Flexbox Container, Only direct HTML elements ( not all inner elements ) in Flexbox Container are called Flex items
+
+- flex-row ( default ) or flex-column specifies the direction of flex items
+
+- justify-content-center/start/end ---- Align flex items horizontally to center/left/right
+
+
+=================================================================
+
+<img src=""/> --- HTML Image element, src specifies path(URL) of Image
+
+Void elements :-- The HTML elements that only have start tag and do not contain content/end tag are called as Void elements
+
+Margin -:-- Specifies the space around the 4 sides of an HTML element ( margin-top .,.)
+
+
+??? HTML Image vs CSS Background Image : 
+When there is no content/HTML element over image (or) image is a part of content ---- use HTML Image  ( In vice-versa case use CSS Background Image )
+
+
+???? CSS Margin vs CSS Padding -:-- 
+Margin : To specify the space around 4 sides of an HTML element (or) To add space b/w HTML elements
+
+Padding : To specify the space around 4 sides of content an HTML element (or) To add space b/w content and border of an HTML elements
+
+========================================
+
+Bootstap Components -:-- 
+
+Carousel : Slideshow for cycling through images
+
+*** Use Bootstap Carousel Component
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+Add this line in head -- when using Bootstap
+
+
+Bootstap Utilities :-- 
+    Embed ---- To embed the youtube video
+    <iframe class="" src="https://www.youtube.com/embed/-------?rel=0" allowfullscreen></iframe>  - -- from Bootstap 
+
+    Can add video Id @ ---- In video link , copy Id after v=   ------------ if & is present copy before & --- and paste in src before ? 
+
+
+
+=====================================================
+
+CCBP UI Kit Script code should be placed just before the HTML body end tag
+
+HTML id attribute --- Unique for HTML element within the document
+
+id = "sectionHome"   --- CCBP UI Kit works when the id prefix is section only
+
+onclick = "display('sectionHome')"   ---- single quotes in double quotes 
+
+In carousels also try to change the id's to work properly  ****
+
+===============================================================================================
+
+HTML Lists -:-- Way to group related pieces of information. Unordered and Ordered Lists
+
+Unordered :-- collection of related items that have no special order ( painting, reading, playing etc .,. )
+    * By default marked with bullets
+    list-style-type: square, circle, disc, none;
+
+    <ul>
+        <li></li>
+    </ul>
+
+Ordered -:-- collection of related items that follow some order ( Web Technologies like HTML, CSS, JS )
+    * By default items are marked with numbers
+    list-style-type: upper-alpha, lowe-alpha, upper-roman, lower-roman, decimal, none;
+
+    <ol>
+        <li></li>
+    </ol>
+
+========================================================================
+
+HTML Hyperlinks -:--- Html   a defines Hyperlink
+Used to navigate to other web resources or specific element within document ( called links)
+
+<a href="URL or path of page" target="_blank"> Hello </a>
+
+target -- specifies when to open the linked web resource
+
+
+----- To Navigate within the same HTML document
+To navigate to different sections within same HTML document  ---
+        Add HTML id attribute to section that we want to navigate to 
+        Provide # and value id of the section as a value to link's HTML href attribute
+
+        <a href="#bioSection"> Bio </a>   or
+        <a href="http://www.ccbp.in/"> <img src=""/> </a>
+
+        <div id="bioSection"></div>
+
+
+Most commonly used Void elements are ---- 
+    <br/> -- break
+    <hr/> -- horizontal line
+
+
+https://cloudinary.com/   ---- to generate URL's for own images
+
+In VS Code --- to link html and css files use --- <link rel="stylesheet" href="tourism.css"/> -- void element  ( Add in head element )
+

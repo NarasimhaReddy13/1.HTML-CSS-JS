@@ -1,0 +1,309 @@
+Responsive Web Design -:--- 
+
+Bootstrap Grid System is a collection of reusuable code snippets to create responsive layouts. 
+It made up of containers, rows, 12 column System
+
+
+Container : Holds rows and columns 
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            I'm Narasimha Reddy
+        </div>
+    </div>
+</div>
+
+Row -:-- Wraps all the columns
+Column -:-- Holds the content --- We can specify no.of columns (1 to 12 ) our content should occupy in any device.
+
+col-12 ------------ is a bootstrap class name (12 - will occupy entire width availabe inside the row )
+col-* 
+
+================================================================================================
+
+Layout at different breakpoints :
+
+Bootstrap provides different Bootstrap Grid Column class name prefixes for 5 Responsive (breakpoints) Tiers.
+
+
+
+    Device ----------------------- Device Size (Width) ------------------- Class Name Prefix 
+
+Extra Small, Small  -----------   < 576px, >= 576px     ------------        col-* , col-sm-* 
+Medium, Large, Extra Large ----   >= 768px, >= 992px, >= 1200px -----       col-md-*, col-lg-*, col-xl-* 
+
+
+Bootstrap Follows Mobile First Approach ****
+i.e first, design the layout of a mobile version, and this will be adopted by devices with larger sizes
+
+
+margin-top: 50px;   --- margin-bottom, margin-left, margin-right 
+
+Bootstrap margin -:--   m-* , mt-*, ml-*, mb-*, mr-*   (* symbol range 0 to 5 )
+        0 ---- 0
+        1 ---- 0.25*spacer
+        2 ---- 0.5*spacer
+        3 ---- 1*spacer
+        4 ---- 1.5*spacer
+        5 ---- 3*spacer                  spacer has the default of 16px
+
+mb-3 ------------ 1*16px = 16px
+
+Similary for Bootstrap Padding also ------ p-*
+
+<div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3"></div>
+
+========================================================================================
+
+Bootstrap Navbar -:--- 
+
+A Navbar is a navigation header , with Bootstrap Navabr can extend or collapse depending on device size 
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="#">
+          Home
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </nav>
+
+
+======================================
+
+In general, HTML elements are divided into 2 categories
+
+1. Block-level Elements -:--- Always starts in new line and takes Full width ( occupies entire hori space of its parent element )
+    h1, p, div 
+
+2. Inline Elements -:-- Do not start in new line and only takes up as much width as necessary ( button, img, a )
+
+-------------------------------------------------------
+
+CSS Box Properties -:-- 
+
+Margin -:-- We can align HTML Block-level elements horizontally using CSS margin property 
+            margin: auto;
+
+            If we specify CSS text-align prop to Block-level element, it aligns the text or HTML Inline elements inside it
+
+    
+margin-right: auto; ---- Takes up all availabe space on right and element gets aligned to left 
+margin-left: auto; ----- Takes up all availabe space on left and element gets aligned to right
+
+
+*** Bootstrap Utility ---- m-auto, ml-auto, mr-auto 
+
+==============================================================================================
+
+CSS Selectors and Inheritance :
+
+Selectors are used to select HTML elements that we want to style.
+
+Simple Selectors -:--- Class, Id, Type (tag name), Attribute, Universal,Pseudo-class selector
+Compound and Complex Selectors and many more
+
+
+Class Selector : selects all HTML elements that have a given CSS class selector as their class attribute value 
+                 .paragraph {
+                     color: blue;
+                 }
+
+                 . (dot) notation, can be more than 1 HTML element with same class name in document
+
+
+ID Selector : CSS ID selector selects the HTML based on its ID attribute value 
+              #populationPara {
+                  color: red;
+              }
+
+              # (hash) notation , Only 1 HTML element with given ID in entire HTML document.
+
+
+Type (tag name) Selector : Selects all HTML elements based on their tag names
+                           h1 {
+                               color: red;
+                           }
+
+===================================================================================================
+
+
+CSS Inheritance : Mechanism through which the value of CSS Properties is passed on from parent's to child elements
+
+CSS Properties are divided into 2 categories :
+
+Inherited Properties -:--- CSS properties applied to parent element are inherited by child elements
+                           font-family, font-style, font-weight, text-align, list-style-type, color ------ 
+
+Non-inherited Properties -:-- CSS properties applied to parent element are not inherited by child elements
+                              width, height, margin, padding, border-style(width, color, radius), 
+                              background-image(color, size), text-decoration -------------------
+
+-------------------------------------------------------
+
+Specificity :
+How the browsers decide which CSS property values are most relevant to an HTML element and, will be applied 
+
+Lowest to Highest Order by Specificity:
+Type (tag name) < Class Selector < ID Selector
+
+ID Selector is more specific compared to Class Selector which is more specific compared to Type Selector
+
+***** Doesn't overwrite the entire CSS but only overwrites the CSS properties that are same ******
+
+
+
+Inline Styles : 
+Inline styles are applied directly to HTML element. Using style attribute
+
+<h1 style="color: red; background-color: orange;"> Heading </h1>
+** Has Highest Specificity but not recommended to use because -- Inline styles are not reusuable
+
+
+-------------------------------------------------------
+CSS Cascade :
+
+When 2 CSS Rulesets have equal Specificity (order in which they appear in CSS) , the one that comes last in the CSS is applied.
+
+*
+!important --- is a special peice of CSS used to make a particular CSS property and value the Most Specific Thing , 
+               irrespective of source order and Specificity
+
+               h1 {
+                   color: orange !important;
+               }
+** Only use !imporatant when we want to override foreign CSS ( from external libraries like Bootstrap )
+
+-------------------------------------------------------
+
+<div class="container"></div>
+
+Bootstrap class name container -- provides us default left and right spacings for all devices.
+It has one fixed width for each breakpoint in Bootstrap
+
+
+Device ----------------------- Device Size (Width) ------------------- Container Max Width
+
+Extra Small, Small  -----------   < 576px, >= 576px     ------------    100% , 540px
+Medium, Large, Extra Large ----   >= 768px, >= 992px, >= 1200px -----   720px, 960px, 1140px
+
+
+<div class="fluid-container"></div>
+It is a full width container, spanning the entire width of viewport ( Use if we don't need left and right spaces )
+
+-------------------------------------------------------
+
+background-color: transparent;  or bg-transparent 
+
+<p class="para"> Food Offers upto <span class="offers"> 50% OFF </span> and Promo Codes </p>
+
+span -- element is a generic inline container -- used for styling text in HTML elements
+
+CSS Units:
+Percentage ----To define the size of Child Element relative to its Parent Element , we can use Percentage
+               .width-in-percent {
+                   width: 50%;
+               }
+
+Bootstrap Sizing Utilities :
+Percentage : Can also use Bootstrap class names 
+             w-25, w-50, w-75, w-100 
+
+             * By default height of the image automatically adjusts when we alter the width 
+
+=============================================================================================================
+
+??? How to add Bootstrap Icons ??????????
+
+https://icons.getbootstrap.com --- for bootstrap icons
+click on the icon 
+Copy the HTMl code and paste it 
+
+<svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fill-rule="evenodd"
+      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+    />
+</svg>
+----- Change HTML attributes width, height and fill of the HTML svg elements as we need --- It is an HTML Inline element
+
+
+Bootstrap class name ------
+    shadow
+    shadow-none , shadow-sm, shadow-lg
+
+-------------------------------------------------------
+Bootstrap flex Utilities:
+
+Order (0-12): To change the visual order of flex items that appear inside the flex container ( order-1 --- order-12)
+
+These class names are responsive. So we can set the order by breakpoint
+order-1, order-md-2, order-lg-3 
+
+
+Bootstrap Display Utilities:
+We can hide an show HTML elements responsively for each screen size with Display Utilities
+
+Can hide HTML elements using --------- d-*-none 
+( d-none, d-sm-none, d-md-none)
+
+
+Based on Type of HTML element, We can use  d-*-inline and d-*-block  class names to show HTML element.
+d-block, d-md-inline, d-lg-block   etc.,.
+
+==================================================================================
+
+There are a limited number of icons in Bootstrap icons. So, we use Font Awesome Icons
+
+To use Font Awesome icons -- paste the below line in HTML head element
+<script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+
+border-radius:; --- allows us to add circular corners to HTML element when we provide same height & width 
+
+-------------------------------------------------------
+
+Adding links to sections to navigate from navbar:
+    * Adding id to section to which we want to navigate  <div class="" id="wcuSection"></div>
+    * Providing id with # as href attribute value to Nav Item  <a class="" id="" href="#wcuSection"></a>
+
+
+Bootstrap Position Utilities:
+    "fixed-top" bootstrap class name positions an HTML element at the top of viewport irrespective of scrolling
+    <nav class="--- fixed-top"></nav>  * fixed-bottom 
+
+-------------------------------------------------------
+
+Bootstrap Components:
+
+Modal: Bootstrap Modal code
+
+Gradients: A special type of background image formed by transition b/w 2 or more colors
+
+Linear Gradient: Specifying two or more colors
+    .linear-container {
+        background-image: linear-gradient(color1, color2);
+    }
+
+    -- By default, Linear Gradients run from top to bottom.
+    to top, to bottom, to left, to right
+
+    .linear-container {
+        background-image: linear-gradient(to right, color1, color2);
+    }
+
+-----------------------------------------------------------------------------
+
+Radial Gradients: 
+    .radial-container {
+        background-image: radial-gradient(color1, color2);
+    } 
